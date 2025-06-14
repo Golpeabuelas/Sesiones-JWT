@@ -33,7 +33,7 @@ btnSubmit.addEventListener('click', async (event) => {
         }
 
         if ( validarContraseñas(contraseñaInput.value, confirmarContraseñaInput.value) && await buscarCorreoRegistrado(correoInput.value) && validarEstructuraCorreo(correoInput.value) ) {
-            alert('entro porque soy ggei')
+            alert('entro')
             const result = await registrarSesion(nombreInput.value, correoInput.value, contraseñaInput.value)
             
             window.location.href = 'http://localhost:3000/'
