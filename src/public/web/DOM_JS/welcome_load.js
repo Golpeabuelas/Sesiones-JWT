@@ -1,7 +1,7 @@
 async function mostrarBienvenida() {
     try {
         const token = localStorage.getItem('TOKEN');
-        const res = await fetch('/protected', {
+        const res = await fetch('https://sesiones-jwt.onrender.com/protected', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -14,7 +14,7 @@ async function mostrarBienvenida() {
         const data = await res.json();
         document.getElementById('bienvenida').textContent = `Bienvenido, ${data.usuario}`;
     } catch {
-        window.location.href = '/web/sign_in.html';
+        window.location.href = 'https://sesiones-jwt.onrender.com/web/sign_in.html';
     }
 }
 

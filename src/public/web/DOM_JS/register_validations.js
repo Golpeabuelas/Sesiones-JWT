@@ -9,7 +9,7 @@ export function validarEstructuraCorreo(correo) {
 }
 
 export async function buscarCorreoRegistrado (correo) {
-    const result = await fetch(`http://localhost:3000/find-email-registered/${correo}`)
+    const result = await fetch(`https://sesiones-jwt.onrender.com/find-email-registered/${correo}`)
     const status = await result.json()
 
     if ( status.status == 201 ) { return true } 

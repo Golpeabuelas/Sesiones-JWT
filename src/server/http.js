@@ -51,7 +51,6 @@ methods.post('/login', async (req, res) => {
             id: usuario.rows[0].id, usuario: usuario.rows[0].nombre, correo: usuario.rows[0].correo }, 
             process.env.SECRET_KEY_TOKEN, 
             { expiresIn: '12h'})
-        console.log(jwt.verify(token, process.env.SECRET_KEY_TOKEN))
         res.json({ status: 200, token })
     }
 })
@@ -61,7 +60,7 @@ methods.post('decrypt-jwt', (req, res) => {
 
     try {
         const data = jwt.verify(token, process.env.SECRET_KEY_TOKEN)
-        console.log('token:', data)
+
         res.json(data)
     } catch (error) {
         console.log('efe efe papa yiyi')

@@ -27,7 +27,6 @@ routes.post('/protected', async (req, res) => {
 
     const data = jwt.verify(token, process.env.SECRET_KEY_TOKEN)
 
-    console.log(data)
     res.json(data)
 });
 
